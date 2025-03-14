@@ -51,3 +51,6 @@ page = 'https://www.prospektmaschine.de/hypermarkte/'
 parse = ParseBrochure(page)
 answer = parse.parse_brochure()
 answer_json = json.dumps(answer, indent=4, ensure_ascii=False)
+with open("brochures.json", "w", encoding="utf-8") as file:
+    file.write(answer_json)
+
