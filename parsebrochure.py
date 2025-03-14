@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 from pprint import pprint
 from datetime import datetime
+import json
+
 
 class ParseBrochure:
     def __init__(self, page):
@@ -48,4 +50,4 @@ class ParseBrochure:
 page = 'https://www.prospektmaschine.de/hypermarkte/'
 parse = ParseBrochure(page)
 answer = parse.parse_brochure()
-pprint(answer)
+answer_json = json.dumps(answer, indent=4, ensure_ascii=False)
