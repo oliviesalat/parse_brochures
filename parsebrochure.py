@@ -26,7 +26,7 @@ class ParseBrochure:
         return formatted_date
 
     def parse_brochure(self):
-        self.divs = self.soup.find_all('div', class_='brochure-thumb col-xs-6 col-sm-3')
+        self.divs = self.soup.find_all('div', class_='brochure-thumb')
         self.row = self.soup.find_all('div', class_='row row-flex')
         self.answer = []
         for div in self.divs:
