@@ -38,8 +38,8 @@ class ParseBrochure:
             valid_from = self.format_date(" ".join(valid[:-1]))
             valid_to = self.format_date(" ".join(valid[-1:]))
             parsed_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            strong = div.find('strong').get_text()
-            self.answer.append({'title': strong, 'thumbnail': thumbnail,
+            answer_title = div.find('strong').get_text()
+            self.answer.append({'title': answer_title, 'thumbnail': thumbnail,
                            "shop_name": shop_name,
                            "valid_from": valid_from, "valid_to": valid_to,
                            "parsed_time": parsed_time})
