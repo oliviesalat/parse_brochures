@@ -35,7 +35,7 @@ class ParseBrochure:
             a = div.find('a')
             title = a['title']
             thumbnail = self.clean_thumbnail(div.find('img', alt=title))
-            shop_name = a['title'].split()[6]
+            shop_name = a['title'].split()[6].strip(',')
             valid = div.find('small', class_='hidden-sm').get_text().replace("-", "").split()
             valid_from = self.format_date(" ".join(valid[:-1]))
             valid_to = self.format_date(" ".join(valid[-1:]))
