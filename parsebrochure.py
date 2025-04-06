@@ -5,6 +5,7 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 import json
+from urllib.parse import urljoin
 
 
 class ParserCategory:
@@ -31,7 +32,7 @@ class Category:
                  name: str,
                  page: str):
         self.name = name
-        self.url = page.replace('/hypermarkte/', self.name)
+        self.url = urljoin(page, self.name)
 
 
 class Brochure:
